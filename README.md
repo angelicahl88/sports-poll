@@ -25,10 +25,11 @@ I didn't run into any big issues during development. A lot of time went to setti
 I decided to serve all of the test data with the request to the database as the number of sport events were low and it seemed unnecessary to perform multiple requests as the user navigated between events. I would have potentially done this differently had the dataset been much larger for performance and efficiency reasons.
 I made the UI very basic in order to be able to visualise the data while still not spending all of the allotted time on the styling. With more time, I would've revisited the design, colour choice and improved the UX using some transitions and better feedback when interacting with the app.
 I used MongoDB for my database as I have some experience with it. The test data however doesn't necessarily need a document-based and dynamic data structure so had this been a 'real' project I would've looked into what would be the best suited database to meet the needs of the application. Also, had I realised it would be quite hard to deploy on aws, I would've chosen a different solution even for this test assignment.
+(I haven't set up the database to clear any votes so they will currently be stored for future sessions).
 
 
 ### How to view / run
-The app is deployed on aws for view on https://eu-west-1.console.aws.amazon.com/console/home?region=eu-west-1
+The app is deployed on aws for view on http://node-express-env.srpjbmmhj2.eu-west-1.elasticbeanstalk.com/
 
 Alternatively, if you want to clone and run the project locally:
 ```
