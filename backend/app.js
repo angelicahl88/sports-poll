@@ -12,7 +12,7 @@ app.use(jsonParser());
 
 require('./models/database');
 
-app.use('/', express.static('public'));
+// app.use('/', express.static('public'));
 app.use('/games', router);
 
 
