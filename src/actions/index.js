@@ -1,6 +1,7 @@
 import store from '../Store';
 import * as types from './actionTypes';
 
+const baseUrl = 'http://node-express-env.srpjbmmhj2.eu-west-1.elasticbeanstalk.com/';
 
 // success fetch
 const onFetchSuccess = (games) => {
@@ -20,7 +21,9 @@ const onFetchFail = (err) => {
 
 // fetch data
 export function fetchData() {
-   const url = process.env.NODE_ENV === 'production' ? 'https://eu-west-1.console.aws.amazon.com/console/home?region=eu-west-1/games' : 'http://localhost:5000/games';
+   const url = process.env.NODE_ENV === 'production' ? `${baseUrl}/games` : 'http://localhost:5000/games';
+
+   console.log(url, process.env.NODE_ENV);
    return (dispatch) => {
       return fetch(url)
          .then(res => res.json())
@@ -59,7 +62,7 @@ const onVoteFail = (err) => {
 
 // place vote
 export function placeVote(id, outcome) {
-   const url = process.env.NODE_ENV === 'production' ? `https://eu-west-1.console.aws.amazon.com/console/home?region=eu-west-1/games/${id}/vote-${outcome}` : `http://localhost:5000/games/${id}/vote-${outcome}`;
+   const url = process.env.NODE_ENV === 'production' ? `${baseUrl}/games/${id}/vote-${outcome}` : `http://localhost:5000/games/${id}/vote-${outcome}`;
    return (dispatch) => {
       return fetch(url, { method: 'POST' })
          .then(res => res.json())
