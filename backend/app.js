@@ -12,7 +12,9 @@ app.use(jsonParser());
 
 require('./models/database');
 
-// app.use('/', express.static('public'));
+
+const static = process.env.NODE_ENV === 'production' ? 'build' : 'public';
+app.use('/', express.static(static));
 app.use('/games', router);
 
 
