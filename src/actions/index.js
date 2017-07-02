@@ -20,8 +20,9 @@ const onFetchFail = (err) => {
 
 // fetch data
 export function fetchData() {
+   const url = process.env.NODE_ENV === 'production' ? 'http://localhost:5000/games' : 'http://localhost:5000/games';
    return (dispatch) => {
-      return fetch('http://localhost:5000/games')
+      return fetch(url)
          .then(res => res.json())
          .then(games => dispatch(onFetchSuccess(games)))
          .catch(err => dispatch(onFetchFail(err)));
@@ -58,7 +59,7 @@ const onVoteFail = (err) => {
 
 // place vote
 export function placeVote(id, outcome) {
-   const url = `http://localhost:5000/games/${id}/vote-${outcome}`;
+   const url = process.env.NODE_ENV === 'production' ? `http://localhost:5000/games/${id}/vote-${outcome}` : `http://localhost:5000/games/${id}/vote-${outcome}`;
    return (dispatch) => {
       return fetch(url, { method: 'POST' })
          .then(res => res.json())
