@@ -1,0 +1,96 @@
+@mixin getCountrySvg($countries...) {
+   @each $country in $countries {
+      &.#{$country} {
+         background: url(../assets/#{$country}.svg);
+      }
+   }
+}
+
+@mixin getSportImg($sports...) {
+   @each $sport in $sports {
+      &.#{$sport} {
+         background-image: url(../assets/#{$sport}.jpg);
+         background-size: cover;
+         background-position: top;
+      }
+   }
+}
+
+.card {
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   display: flex;
+   flex-flow: row wrap;
+   align-content: space-between;
+   background: white;
+   z-index: 1;
+   &.active {
+      z-index: 2;
+   }
+
+   .country-banner {
+      width: 100%;
+      height: 10px;
+      background: grey;
+      box-shadow: 0 3px 2px 0 rgba($text-black, 0.05);
+      @include getCountrySvg('sweden', 'england', 'france');
+   }
+}
+
+.matchState {
+   position: relative;
+   text-align: right;
+   align-self: flex-start;
+   padding-right: 1.5rem;
+   margin: -2rem 1rem 0 auto;
+
+   span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      background: grey;
+      &.started {
+         background: $started;
+      }
+      &.not_started {
+         background: $not-started;
+      }
+      &.finished {
+         background: $finished;
+      }
+   }
+}
+
+.gameStats {
+   flex-basis: 100%;
+   text-align: center;
+   margin-bottom: 2em;
+
+   .versus {
+      width: 3rem;
+      height: 3rem;
+      margin: 2em auto;
+      background: $neutral-color;
+      border-radius: 50%;
+      line-height: 3em;
+   }
+}
+
+.sportImg {
+   width: 100%;
+   background: grey;
+   height: 150px;
+   filter: opacity(40%);
+   @include getSportImg('tennis', 'ice_hockey', 'football', 'handball', 'snooker');
+   transition: .3s height ease-in;
+
+   @media screen and (min-width: 600px) {
+      height: 200px;
+   }
+}

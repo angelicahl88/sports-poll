@@ -1,0 +1,28 @@
+.nav-btn {
+   flex: 1;
+   text-align: center;
+   background: darken($primary-color, 15%);
+
+   &:hover {
+      background: $secondary-accent-color;
+      cursor: pointer;
+
+      p {
+         color: $text-black;
+      }
+   }
+
+   &#prev {
+      border-right: 1px solid $text-white;
+   }
+
+   &#next {
+      border-left: 1px solid $text-white;
+   }
+
+   p {
+      line-height: 30px;
+      margin: 0;
+      color: darken($text-white, 15%);
+   }
+}

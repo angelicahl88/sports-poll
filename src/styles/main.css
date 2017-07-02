@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700");
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  background: #ECF0F1; }
+
+p, h6, h5, h4, h3, h2, h1 {
+  font-weight: 400;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  color: #222; }
+  p.bold, h6.bold, h5.bold, h4.bold, h3.bold, h2.bold, h1.bold {
+    font-weight: 700; }
+  p.light, h6.light, h5.light, h4.light, h3.light, h2.light, h1.light {
+    font-weight: 300; }
+  p.upper, h6.upper, h5.upper, h4.upper, h3.upper, h2.upper, h1.upper {
+    text-transform: uppercase; }
+  p.lower, h6.lower, h5.lower, h4.lower, h3.lower, h2.lower, h1.lower {
+    text-transform: lowercase; }
+
+p {
+  font-size: 1rem; }
+
+h6 {
+  font-size: 0.8rem; }
+
+h5 {
+  font-size: 1rem; }
+
+h4 {
+  font-size: 1.2rem; }
+
+h3 {
+  font-size: 1.4rem; }
+
+h2 {
+  font-size: 1.6rem; }
+
+h1 {
+  font-size: 1.8rem; }
+
+.app {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+  transition: .3s padding ease-in; }
+  @media screen and (min-width: 700px) {
+    .app {
+      padding: 0 10rem; } }
+
+.card-container {
+  position: relative;
+  height: 100%; }
+
+.vote-container {
+  position: absolute;
+  bottom: 30px;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  height: 100px;
+  text-align: center;
+  z-index: 3;
+  box-sizing: border-box;
+  transition: .3s left right height ease-in; }
+  @media screen and (min-width: 700px) {
+    .vote-container {
+      height: 150px;
+      left: 10rem;
+      right: 10rem; } }
+  .vote-container .title {
+    flex-basis: 100%; }
+
+.navigation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  z-index: 3;
+  transition: .3s left right ease-in; }
+  @media screen and (min-width: 700px) {
+    .navigation {
+      left: 10rem;
+      right: 10rem; } }
+
+.card {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+  background: white;
+  z-index: 1; }
+  .card.active {
+    z-index: 2; }
+  .card .country-banner {
+    width: 100%;
+    height: 10px;
+    background: grey;
+    box-shadow: 0 3px 2px 0 rgba(34, 34, 34, 0.05); }
+    .card .country-banner.sweden {
+      background: url(../assets/sweden.svg); }
+    .card .country-banner.england {
+      background: url(../assets/england.svg); }
+    .card .country-banner.france {
+      background: url(../assets/france.svg); }
+
+.matchState {
+  position: relative;
+  text-align: right;
+  align-self: flex-start;
+  padding-right: 1.5rem;
+  margin: -2rem 1rem 0 auto; }
+  .matchState span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: grey; }
+    .matchState span.started {
+      background: #27AE60; }
+    .matchState span.not_started {
+      background: #F39C12; }
+    .matchState span.finished {
+      background: #C0392B; }
+
+.gameStats {
+  flex-basis: 100%;
+  text-align: center;
+  margin-bottom: 2em; }
+  .gameStats .versus {
+    width: 3rem;
+    height: 3rem;
+    margin: 2em auto;
+    background: #16A085;
+    border-radius: 50%;
+    line-height: 3em; }
+
+.sportImg {
+  width: 100%;
+  background: grey;
+  height: 150px;
+  filter: opacity(40%);
+  transition: .3s height ease-in; }
+  .sportImg.tennis {
+    background-image: url(../assets/tennis.jpg);
+    background-size: cover;
+    background-position: top; }
+  .sportImg.ice_hockey {
+    background-image: url(../assets/ice_hockey.jpg);
+    background-size: cover;
+    background-position: top; }
+  .sportImg.football {
+    background-image: url(../assets/football.jpg);
+    background-size: cover;
+    background-position: top; }
+  .sportImg.handball {
+    background-image: url(../assets/handball.jpg);
+    background-size: cover;
+    background-position: top; }
+  .sportImg.snooker {
+    background-image: url(../assets/snooker.jpg);
+    background-size: cover;
+    background-position: top; }
+  @media screen and (min-width: 600px) {
+    .sportImg {
+      height: 200px; } }
+
+.vote {
+  flex: 1; }
+  .vote h4 {
+    width: 50px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    background: #34495E;
+    color: #ECF0F1; }
+    .vote h4:hover {
+      background: #1ABC9C;
+      color: #222;
+      cursor: pointer; }
+
+.nav-btn {
+  flex: 1;
+  text-align: center;
+  background: #19232d; }
+  .nav-btn:hover {
+    background: #7F8C8D;
+    cursor: pointer; }
+    .nav-btn:hover p {
+      color: #222; }
+  .nav-btn#prev {
+    border-right: 1px solid #ECF0F1; }
+  .nav-btn#next {
+    border-left: 1px solid #ECF0F1; }
+  .nav-btn p {
+    line-height: 30px;
+    margin: 0;
+    color: #c0cdd1; }

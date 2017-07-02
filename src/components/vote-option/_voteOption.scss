@@ -1,0 +1,17 @@
+.vote {
+   flex: 1;
+
+   h4 {
+      width: 50px;
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
+      background: $primary-color;
+      color: $text-white;
+
+      &:hover {
+         background: $accent-color;
+         color: $text-black;
+         cursor: pointer;
+      }
+   }
+}
