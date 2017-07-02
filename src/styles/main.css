@@ -188,6 +188,9 @@ h1 {
     padding: 0.5rem 1rem;
     background: #34495E;
     color: #ECF0F1; }
+    .vote h4.active {
+      background: #222;
+      color: #1ABC9C; }
     .vote h4:hover {
       background: #1ABC9C;
       color: #222;

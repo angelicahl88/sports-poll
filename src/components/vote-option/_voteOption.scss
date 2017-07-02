@@ -8,6 +8,11 @@
       background: $primary-color;
       color: $text-white;
 
+      &.active {
+         background: $text-black;
+         color: $accent-color;
+      }
+
       &:hover {
          background: $accent-color;
          color: $text-black;

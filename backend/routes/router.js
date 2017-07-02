@@ -11,6 +11,12 @@ router.get('/*', (req, res, next) => {
    next();
 });
 
+router.post('/*', (req, res, next) => {
+   res.header('Access-Control-Allow-Origin', '*');
+   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+   next();
+});
+
 // Game parameter handler
 router.param('id', (req, res, next, id) => {
   Game.find({ id: id }, function(err, doc) {

@@ -1,7 +1,11 @@
 import React from 'react'
 
-const NavigationBtn = ({ text }) => (
-   <div className="nav-btn" id={text.toLowerCase()}>
+const NavigationBtn = ({ text, handleClick }) => (
+   <div
+      className="nav-btn"
+      id={text.toLowerCase()}
+      onClick={() => handleClick()}
+   >
       <p>{text}</p>
    </div>
 )
